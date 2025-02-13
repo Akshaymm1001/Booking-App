@@ -7,8 +7,9 @@ const ShopRouter = require('./Shop/ShopRouter/ShopRouter')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors())
 
- async function connectDb(){
+async function connectDb(){
 try {
     await DBconnect()
 console.log("db connected")
@@ -20,7 +21,7 @@ console.log("db connected")
 
 app.use('/Users',UserRouter)
 app.use('/Shop',ShopRouter)
-app.use(cors())
+
 
 app.listen(1000,() =>{
     console.log('hahahhah')
