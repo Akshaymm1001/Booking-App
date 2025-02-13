@@ -73,6 +73,9 @@ const getalllshop = async(req,res)=>{
     try {
         let AllShop = await GetShopfn()
         console.log(AllShop,"successfullyyyy")
+        res.json({
+            Shops:AllShop
+        })
     } catch (error) {
        console.log(error) 
     }
